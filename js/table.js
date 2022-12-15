@@ -45,13 +45,12 @@ data.forEach((text) => {
                             <td>${text.description}</td>
                             <td>${text.info}</td>
                             <td>
-                              <a href="${text.image}" target="_blank">
                                 <img height=150 width=200 src="${text.image}">
-                              </a>
                             </td>
                           </tr>`;
 
   $(document).ready(function () {
+    $("tbody img").wrap($("<a>", { href: text.image, target: "_blank" }));
     $(".hover:even").hover(
       function () {
         $(this).css("color", "red");
